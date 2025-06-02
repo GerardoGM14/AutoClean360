@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: autoclean360
+    env: docker
+    plan: free
+    branch: main
+    repo: https://github.com/tuusuario/autoclean360
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: APP_DEBUG
+        value: false
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        value: base64:OhFST5K0Kl4qibCu3Crml9Pb+rcxsKFbCTnAJnZYmg8=
+      - key: APP_URL
+        value: https://autoclean360.onrender.com
+      - key: DB_CONNECTION
+        value: sqlite
+      - key: DB_DATABASE
+        value: /tmp/sqlite.db
+      - key: FIREBASE_API_KEY
+        value: "AIzaSyAykf_rLw3KLeHiGi_UfAF-YUGH_5YH75A"
+      - key: FIREBASE_PROJECT_ID
+        value: "autoclean360-3e0f7"
+      - key: FIREBASE_AUTH_DOMAIN
+        value: "autoclean360-3e0f7.firebaseapp.com"
+      - key: GOOGLE_MAPS_API_KEY
+        value: "AIzaSyAnoWdyxxh6kfHFG2Q9AoecbJJnEncGgI4"
