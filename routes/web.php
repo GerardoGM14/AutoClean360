@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+Route::get('/', fn() => redirect('/login'));
 
 Route::get('/login', function () {
     return view('login');
