@@ -39,7 +39,7 @@ RUN npm install && npm run build
 # Etapa 5: Permisos y cache
 # ------------------------------------------------------------
 RUN chmod -R 775 storage bootstrap/cache
-RUN php artisan config:cache && php artisan view:cache
+
 # ------------------------------------------------------------
 # Etapa 6: Variables necesarias para Laravel
 # (Estas las puedes sobreescribir con Render en render.yaml)
@@ -54,3 +54,5 @@ EXPOSE 8000
 
 # Comando de inicio
 CMD php artisan serve --host=0.0.0.0 --port=8000
+CMD php artisan config:cache && php artisan view:cache && php artisan serve --host=0.0.0.0 --port=8000
+
